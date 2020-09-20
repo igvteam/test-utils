@@ -8,15 +8,13 @@ import {XMLHttpRequestMock} from "./XMLHttpRequestMock.js"
  */
 function createMockObjects() {
 
-    global.File = File;
-    global.XMLHttpRequest = XMLHttpRequestMock;
-    global.navigator = {
-        userAgent: "Node",
-        vendor: "Node"
-    }
-    global.genome = {
-        getChromosomeName: function (chr) {
-            return chr.startsWith("chr") ? chr : "chr" + chr;
+    // This function might be called multiple times from independent tests, only create the mock objects once.
+    if(typeof global.File === "undefined") {
+        global.File = File;
+        global.XMLHttpRequest = XMLHttpRequestMock;
+        global.navigator = {
+            userAgent: "Node",
+            vendor: "Node"
         }
     }
 }
