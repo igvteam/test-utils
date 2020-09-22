@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {},
   "peerDependencies": {
-    "w3c-xmlhttprequest": "^3.0.0"
+    "w3c-xmlhttprequest": "^3.0.0",
+    "btoa": "^1.2.1"
   }
 
 }
