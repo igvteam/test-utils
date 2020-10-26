@@ -17,11 +17,11 @@ class File {
 
     async arrayBuffer() {
         const b = this.buffer;
-        return b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength);
+        return Promise.resolve(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength));
     }
 
     text() {
-        return this.buffer.toString();
+        return Promise.resolve(this.buffer.toString());
     }
 
     stream() {

@@ -1,6 +1,6 @@
 import {File} from "./File.js"
 import {XMLHttpRequestMock} from "./XMLHttpRequestMock.js"
-
+import {document} from "./document.js";
 
 /**
  * Setup mock objects for unit tests
@@ -16,6 +16,15 @@ function createMockObjects() {
             userAgent: "Node",
             vendor: "Node"
         }
+
+        global.document.implementation = global.document;
+
+        global.window = {
+            document,
+            setTimeout: function () {
+            }
+        }
+
     }
 }
 
