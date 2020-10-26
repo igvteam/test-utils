@@ -46,7 +46,16 @@ const document = {
                 childNodes: [{}, {}]
             }
         }
-    }
+    },
+
+    styleSheets: [],
+
+    head: {
+        insertBefore: function() {},
+        childNodes: []
+    },
 }
+
+document.implementation = document;    // For jQUery
 
 export {document};
